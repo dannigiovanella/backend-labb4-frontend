@@ -1,13 +1,59 @@
 <!doctype html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>labb4-front</title>
-  </head>
-  <body>
-    
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logga in/Registrera</title>
+</head>
+
+<body>
+  <header>
+
+  </header>
+
+  <main>
+
+    <!--Sektion för log in-->
+    <section class="login">
+      <h2>Logga in</h2>
+
+      <form>
+        <!--Användarnamn-->
+        <input id="loginUser" placeholder="username">
+        <!--Lösenord-->
+        <input id="loginPass" type="password" placeholder="password">
+        <!--Knapp för att logga in-->
+        <button id="loginBtn">Logga in</button>
+      </form>
+    </section>
+
+    <!--Sektion för register-->
+    <section class="register">
+      <h3>Registrera dig</h3>
+      <p>Kort text om registrering och villkor</p>
+
+      <form>
+        <!--Användarnamn-->
+        <input id="regUser" placeholder="username">
+        <!--Lösenord-->
+        <input id="regPass" type="password" placeholder="password">
+        <!--Knapp för registrering-->
+        <button id="regBtn">Registrera dig</button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Sida skapad av:</strong></p>
+    <p>Daniela Giovanella<br>dagi2500@student.miun.se</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
