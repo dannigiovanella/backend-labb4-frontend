@@ -10,7 +10,7 @@
 
 <body>
   <header>
-
+    <h1>Välkommen tillbaka</h1>
   </header>
 
   <main>
@@ -22,11 +22,17 @@
       <!--Validering(felmeddelande)-->
       <p id="message"></p>
 
+      <p>Fyll i dina uppgifter för att logga in.</p>
+
       <form>
         <!--Användarnamn-->
-        <input id="loginUser" placeholder="username">
+        <label for="loginUser">Användarnamn</label>
+        <input id="loginUser" name="username" type="text">
+
         <!--Lösenord-->
-        <input id="loginPass" type="password" placeholder="password">
+        <label for="loginPass">Lösenord</label>
+        <input id="loginPass" name="password" type="password">
+
         <!--Knapp för att logga in-->
         <button id="loginBtn" type="button">Logga in</button>
       </form>
@@ -35,16 +41,21 @@
     <!--Sektion för register-->
     <section class="register">
       <h3>Registrera dig</h3>
-      <p>Kort text om registrering och villkor</p>
+
+      <p>Har du inget konto? Registrera dig nedan.</p>
 
       <!--Validering(felmeddelande)-->
       <p id="messagereg"></p>
 
       <form>
         <!--Användarnamn-->
-        <input id="regUser" placeholder="username">
+        <label for="regUser">Användarnamn</label>
+        <input id="regUser" name="username" type="text">
+
         <!--Lösenord-->
-        <input id="regPass" type="password" placeholder="password">
+        <label for="regPass">Lösenord</label>
+        <input id="regPass" name="password" type="password">
+
         <!--Knapp för registrering-->
         <button id="regBtn" type="button">Registrera dig</button>
 
