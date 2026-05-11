@@ -2,8 +2,6 @@
 
 //INLOGGAD SIDA. SKYDDAD ROUTE
 
-//Ladda innehåll innan js-kod körs
-document.addEventListener("DOMContentLoaded", () => {
 
 //HÄMTA TOKEN FÖR ATT VISA SIDA
 //Körs direkt när sidan laddas
@@ -29,20 +27,44 @@ document.addEventListener("DOMContentLoaded", async () => {
     const token = localStorage.getItem("token");
 
     // Skickar request till skyddad route i backend
-    const res = await fetch("https://backend-labb4-backend.onrender.com/api/protected", {
-        //GET - Hämtar data
-        method: "GET",
-        //Header. Skickar token till backend
-        headers: {
-            "Authorization": "Bearer " + token
-        }
-    });
+    try {
+        const response = await fetch("https://backend-labb4-backend.onrender.com/api/protected", {
+            //GET - Hämtar data
+            method: "GET",
+            //Header. Skickar token till backend
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        });
 
-    //Omvandlar svaret till JSON
-    const data = await res.json();
+        //Omvandlar svaret till JSON
+        const data = await response.json();
 
-    //Hämtar element från html och visar användarnamn (skyddad data)
-    document.getElementById("username").textContent = data.user;
-});
+        //Hämtar element från html och visar användarnamn (skyddad data)
+        document.getElementById("username").textContent = data.user;
 
+        //Om nåt går fel, logga ut användare
+    } catch (error) {
+        localStorage.removeItem("token");
+        window.location.href = "/index.html";
+    }
+
+
+    //LOGGA UT
+
+    //Hämtar Logout-knapp
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    //Eventlyssnar som hanterar klick på logout knapp
+    //Kontroll om knapp är tryckt
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+
+            //Tar bort token och loggar ut
+            localStorage.removeItem("token");
+
+            //Skickar tillbaka till login-sidan
+            window.location.href = "/index.html";
+        });
+    }
 });
