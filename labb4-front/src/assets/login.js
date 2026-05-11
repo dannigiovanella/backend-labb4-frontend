@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //Hämtar element för felmedelande
     const messageLogIn = document.getElementById("message");
     const messageReg = document.getElementById("messagereg");
+    const stateMessage = document.getElementById("statemessage");
 
     //LOGGA IN
     //Hämtar id för login-knapp
@@ -18,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Eventlyssnare för vad som händer vid klick av knapp
         loginBtn.addEventListener("click", async () => {
+
+            //visa loading vid seg inloggning
+            stateMessage.textContent = "Loggar in...";
+            stateMessage.classList.remove("error");
 
             //Hämtar värdet från inputfältet för användarnamn
             const username = document.getElementById("loginUser").value;
@@ -157,6 +162,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 //Feedback om registrering lyckades
                 alert("Registrering lyckades");
+
+                //Tömmer fälten
+                document.getElementById("regUser").value = "";
+                document.getElementById("regPass").value = "";
 
                 //omvandlar svaret från backend till js-objekt
                 const data = await response.json();
