@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/style.css">
+
   <title>Logga in/Registrera</title>
 </head>
 
@@ -17,25 +18,33 @@
 
     <!--Sektion för log in-->
     <section class="login">
-      <h2>Logga in</h2>
 
-      <!--Validering(felmeddelande)-->
-      <p id="message"></p>
+      <div class="loginwrapper">
 
-      <p>Fyll i dina uppgifter för att logga in.</p>
+        <div class="logintext">
+          <h2>Logga in</h2>
+          <p>Fyll i dina uppgifter för att logga in.</p>
+        </div>
 
-      <form>
-        <!--Användarnamn-->
-        <label for="loginUser">Användarnamn</label>
-        <input id="loginUser" name="username" type="text">
 
-        <!--Lösenord-->
-        <label for="loginPass">Lösenord</label>
-        <input id="loginPass" name="password" type="password">
+        <form>
 
-        <!--Knapp för att logga in-->
-        <button id="loginBtn" type="button">Logga in</button>
-      </form>
+          <!--Validering(felmeddelande)-->
+          <p id="message"></p>
+
+          <!--Användarnamn-->
+          <label for="loginUser">Användarnamn:</label>
+          <input id="loginUser" name="username" type="text">
+
+          <!--Lösenord-->
+          <label for="loginPass">Lösenord:</label>
+          <input id="loginPass" name="password" type="password">
+
+          <!--Knapp för att logga in-->
+          <button id="loginBtn" type="button">Logga in</button>
+        </form>
+
+      </div>
     </section>
 
     <!--Sektion för register-->
@@ -44,16 +53,18 @@
 
       <p>Har du inget konto? Registrera dig nedan.</p>
 
-      <!--Validering(felmeddelande)-->
-      <p id="messagereg"></p>
 
       <form>
+
+        <!--Validering(felmeddelande)-->
+        <p id="messagereg"></p>
+
         <!--Användarnamn-->
-        <label for="regUser">Användarnamn</label>
+        <label for="regUser">Användarnamn:</label>
         <input id="regUser" name="username" type="text">
 
         <!--Lösenord-->
-        <label for="regPass">Lösenord</label>
+        <label for="regPass">Lösenord:</label>
         <input id="regPass" name="password" type="password">
 
         <!--Knapp för registrering-->
