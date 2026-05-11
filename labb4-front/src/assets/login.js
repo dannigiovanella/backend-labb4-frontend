@@ -4,6 +4,11 @@
 //Ladda innehåll innan js-kod körs
 document.addEventListener("DOMContentLoaded", () => {
 
+    //Validering
+    //Hämtar element för felmedelande
+    const messageLogIn = document.getElementById("message");
+    const messageReg = document.getElementById("messagereg");
+
     //LOGGA IN
     //Hämtar id för login-knapp
     const loginBtn = document.getElementById("loginBtn");
@@ -19,6 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             //Hämtar värdet från inputfältet för lösenord
             const password = document.getElementById("loginPass").value;
+
+            //validering
+            //Felmeddelande vid tomt fält
+            //adderad class för felmeddelande
+            if (!username || !password) {
+                messageLogIn.textContent = "Fyll i användarnamn och lösenord";
+                messageLogIn.classList.add("error");
+                return;
+            }
+
 
             try {
                 //Skickar request till login-route i backend
@@ -38,9 +53,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     })
                 });
 
+
                 //Kontrollerar om inloggning inte lyckas
+                //Felmeddelande för fel användarnamn eller lösenord
+
+                //Rensar fält
+                messageLogIn.textContent = "";
+
                 if (!response.ok) {
-                    throw new Error("Inloggning lyckades ej");
+                    messageLogIn.textContent = "Fel användarnamn eller lösenord";
+                    messageLogIn.classList.add("error");
+                    return;
                 }
 
 
@@ -74,19 +97,33 @@ document.addEventListener("DOMContentLoaded", () => {
     //Skickar användardata till register route för att lägga till ny användare i databasen
 
 
-    // Hämtar knappen för register från HTML
+    //Hämtar knappen för register från html
     const regBtn = document.getElementById("regBtn");
 
     //Kontroll om det är registreringsknapp som körs
     if (regBtn) {
         regBtn.addEventListener("click", async () => {
 
-            // Hämtar värde från input. Användarnamn som användare skrivit in
+            // ämtar värde från input. Användarnamn som användare skrivit in
             const username = document.getElementById("regUser").value;
 
             //Hämtar värde från input. Lösenord som användaren skrivit in
             const password = document.getElementById("regPass").value;
 
+
+            // Validering
+            //Felmeddelande om fält är tomt
+            if (!username || !password) {
+                messageReg.textContent = "Alla fält måste fyllas i";
+                messageReg.classList.add("error");
+                return;
+            }
+            //KOntroll om lösenord är minst 10 tecken
+            if (password.lenght < 10) {
+                messageReg.textContent = "Lösenord måste vara minst 10 tecken";
+                messageReg.classList.add("error");
+                return;
+            }
 
             try {
                 //Skickar request till register-route i backend
@@ -107,9 +144,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 //Kontrollerar om registrering inte lyckas
+                //Felmeddelande om registrering inte lyckas
+
+                //Rensar fält
+                messageReg.textContent = "";
+
                 if (!response.ok) {
-                    throw new Error("Registrering misslyckades");
+                    messageReg.textContent = "Registrering misslyckades";
+                    messageReg.classList.add("error");
+                    return;
                 }
+
+                //Feedback om registrering lyckades
+                alert("Registrering lyckades");
 
                 //omvandlar svaret från backend till js-objekt
                 const data = await response.json();
