@@ -1,28 +1,12 @@
-"use strict";
-
-
-// AUTENTISERING
-// Hanterar inloggning från frontend mot backend API.
-/* Skickar användarnamn och lösenord till login-route, och tar emot jwt-token och spar den i local storage
- för att användaren ska kunna komma åt skyddade resurser.*/
-
- 
-//Inloggning/registreringsida
-
-//REGISTERING
-
-
-
-
-
-
-
-
 //Inloggad sida. Skyddad route
+
+
+//Ladda innehåll innan js-kod körs
+document.addEventListener("DOMContentLoaded", () => {
 
 //HÄMTA TOKEN FÖR ATT VISA SIDA
 //Körs direkt när sidan laddas
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     //Hämtar jwt-token från localStorage
     const token = localStorage.getItem("token");
@@ -60,3 +44,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("username").textContent = data.user;
 });
 
+});
