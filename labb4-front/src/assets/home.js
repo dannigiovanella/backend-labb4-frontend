@@ -1,5 +1,6 @@
-//Inloggad sida. Skyddad route
+"use strict";
 
+//INLOGGAD SIDA. SKYDDAD ROUTE
 
 //Ladda innehåll innan js-kod körs
 document.addEventListener("DOMContentLoaded", () => {
