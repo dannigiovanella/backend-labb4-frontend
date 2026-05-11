@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             //KOntroll om lösenord är minst 10 tecken
-            if (password.lenght < 10) {
+            if (password.length < 10) {
                 messageReg.textContent = "Lösenord måste vara minst 10 tecken";
                 messageReg.classList.add("error");
                 return;
