@@ -37,8 +37,9 @@ main {
     border-radius: 5px;
     padding-top: 1rem;
     display: flex;
-    justify-content: center;
-    flex-direction: column
+    justify-content: flex-start;
+    flex-direction: column;
+
 }
 
 footer {
@@ -129,7 +130,27 @@ button:hover {
 
 /*HOME- SIDA*/
 
+#username {
+    color: rgb(205, 205, 212);
+    font-size: 1.7rem;
+    margin-top: 1rem;
+}
 
+.loggedin {
+    width: 100%;
+    padding: 2rem;
+}
+
+.loggedin h2 {
+    margin-bottom: 2rem;
+}
+
+.loggedin button{
+    width: 50%;
+    margin-top: 5rem;
+}
+
+/*ANPASSNING FÖR MINDRE SKÄRM*/
 
 @media (max-width: 700px) {
 
@@ -145,5 +166,10 @@ button:hover {
         width: 100%;
         border-radius: 0;
     }
+
+    .loggedin button{
+    width: 100%;
+    margin-top: 5rem;
+}
 
 }
