@@ -51,11 +51,13 @@ footer {
 
 /*INDEX - SIDA*/
 
+/*Styling för felmeddelande vid validering*/
 .error {
     color: rgb(203, 46, 46);
     font-size: 1.1rem;
 }
 
+/*LAyout för formulär*/
 form {
     display: flex;
     flex-direction: column;
@@ -69,6 +71,7 @@ input {
     border-radius: 5px;
 }
 
+/*Styling för knappar i formulären*/
 button {
     padding: 0.8rem;
     margin-top: 1rem;
@@ -86,6 +89,7 @@ button:hover {
     background-color: rgb(6, 116, 122);
 }
 
+/*Layput för login-sektionen*/
 .login {
     display: flex;
     justify-content: center;
@@ -106,12 +110,14 @@ button:hover {
     max-width: 500px;
 }
 
+/*Wrapper för rubrik och undertext*/
 .logintext {
     text-align: left;
     margin-bottom: 20px;
 
 }
 
+/*Layout för sektion för registrering*/
 .register {
     margin: 0 auto;
     margin-top: 3rem;
@@ -124,18 +130,21 @@ button:hover {
     color: rgb(205, 205, 212);
 }
 
+/*Bredd för register-formulär*/
 .register form {
     width: 100%;
 }
 
 /*HOME- SIDA*/
 
+/*Styling för användarnamner som visas i header*/
 #username {
     color: rgb(205, 205, 212);
     font-size: 1.7rem;
     margin-top: 1rem;
 }
 
+/*Wrapper för innehållet i main*/
 .loggedin {
     width: 100%;
     padding: 2rem;
@@ -145,6 +154,7 @@ button:hover {
     margin-bottom: 2rem;
 }
 
+/*Logga ut-knapp*/
 .loggedin button{
     width: 50%;
     margin-top: 5rem;
@@ -154,10 +164,12 @@ button:hover {
 
 @media (max-width: 700px) {
 
+    /*Bredd för formulär*/
     form {
         width: 100%;
     }
 
+    /*Marginal och laypout för login/register sektioner*/
     .login {
         margin-bottom: 2rem;
     }
@@ -167,6 +179,7 @@ button:hover {
         border-radius: 0;
     }
 
+    /*Bredd på login-knapp*/
     .loggedin button{
     width: 100%;
     margin-top: 5rem;
